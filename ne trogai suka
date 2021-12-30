@@ -1,0 +1,38 @@
+function move() {
+    if (snakeRotateX === 1) {
+        for(var i = 0; i < tail.length ; i++){
+            playGround.children[i].style.left = parseInt(playGround.children[i].style.left) + 10 + 'px'
+            tail.splice(i, 1);
+            tail.splice(i, 0, {
+                top: playGround.children[i].style.top,
+                left: playGround.children[i].style.left,
+            })
+        }
+    } else if (snakeRotateX === -1) {
+        for(var z = 0; z < tail.length ; z++){
+            playGround.children[z].style.left = parseInt(playGround.children[z].style.left) - 10 + 'px'
+            tail.splice(z, 1);
+            tail.splice(z, 0, {
+                top: playGround.children[z].style.top,
+                left: playGround.children[z].style.left,
+            })
+        }
+    } else if (snakeRotateY === 1) {
+        for(var x = 0; x < tail.length ; x++){
+            playGround.children[x].style.top = parseInt(playGround.children[x].style.top) - 10 + 'px'
+            tail.splice(x, 1);
+            tail.splice(x, 0, {
+                top: playGround.children[x].style.top,
+                left: playGround.children[x].style.left,
+            })
+        }
+    } else if (snakeRotateY === -1) {
+        for(var c = 0; c < tail.length ; c++){
+            playGround.children[c].style.top = parseInt(playGround.children[c].style.top) + 10 + 'px'
+            tail.splice(c, 1);
+            tail.splice(c, 0, {
+                top: playGround.children[c].style.top,
+                left: playGround.children[c].style.left,
+            })
+        }
+    }
